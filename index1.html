@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="refresh" content="1;url=https://smartstore.naver.com/ringflower/products/5254457756" />-->
+    <title>링플라워</title>
+
+<!--    <img style="max-width: 100%; height: auto;" src="https://drive.google.com/uc?export=view&id=1YIXpbhjx9DiEU0WGeI-hCuhxgc7CYnbJ" >-->
+
+<!--    <img src="https://drive.google.com/file/d/1YIXpbhjx9DiEU0WGeI-hCuhxgc7CYnbJ/view?usp=sharing">-->
+</head>
+<body>
+
+</body>
+<script src="js/sweetalert2.js"></script>
+<script src="js/customAlert.js"></script>
+<script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    var goodsNum = getParameterByName('goodsNum');
+
+    if(!goodsNum) {
+
+        toast.toast("info","링플라워 입니다.","center")
+    }else {
+        toast.messageAlert("안녕하세요. 링플라워 입니다. 확인을 누르시면 상품페이지로 이동합니다.", goodsNum)
+        // window.location.replace(`https://smartstore.naver.com/ringflower/products/${goodsNum}`);
+    }
+</script>
+</html>
