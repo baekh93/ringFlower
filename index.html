@@ -2,10 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="1;url=https://smartstore.naver.com/ringflower/products/5254457756" />
+<!--    <meta http-equiv="refresh" content="1;url=https://smartstore.naver.com/ringflower/products/5254457756" />-->
     <title>링플라워</title>
 </head>
 <body>
 
 </body>
-</html>
+<script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    var goodsNum = getParameterByName('goodsNum');
+debugger
+    window.location.replace(`https://smartstore.naver.com/ringflower/products/${goodsNum}`);
+
+</script>
+</html>`
