@@ -8,6 +8,8 @@
 <body>
 
 </body>
+<script src="js/sweetalert2.js"></script>
+<script src="js/customAlert.js"></script>
 <script>
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -16,8 +18,13 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
     var goodsNum = getParameterByName('goodsNum');
-debugger
-    window.location.replace(`https://smartstore.naver.com/ringflower/products/${goodsNum}`);
 
+    if(!goodsNum) {
+
+        toast.toast("info","링플라워 입니다.","center")
+    }else {
+        toast.messageAlert("안녕하세요. 링플라워 입니다. 확인을 누르시면 상품페이지로 이동합니다.", goodsNum)
+        // window.location.replace(`https://smartstore.naver.com/ringflower/products/${goodsNum}`);
+    }
 </script>
-</html>`
+</html>
